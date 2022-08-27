@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="match_parent"
+        tools:context=".login.LoginActivity">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/first">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp10"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_person" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="Enter your mobile number"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/phonenumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:padding="10dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Tap Next to verify your account with your phone number. You don't need to manualy enter verification code if the number install in this phone..."
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/submit1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/button_main_background"
+                    android:text="next"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout1">
+
+                    <TextView
+                        android:id="@+id/dont_have_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Do you want to explore ?" />
+
+                    <TextView
+                        android:id="@+id/skip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="Skip and Explore"
+                        android:textColor="@color/purple" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/first">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp10"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_person" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter the code that was send to"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/phonenumberText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+918372890302"
+                    android:textAlignment="center"
+                    android:textColor="#019b77"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <com.chaos.view.PinView
+                    android:id="@+id/pinView"
+                    style="@style/PinWidget.PinView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:cursorVisible="true"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textColor="#222222"
+                    android:textSize="18sp"
+                    app:cursorWidth="2dp"
+                    app:itemCount="6"
+                    app:itemHeight="48dp"
+                    app:itemRadius="4dp"
+                    app:itemSpacing="5dp"
+                    app:itemWidth="36dp"
+                    app:lineColor="#2f64ba"
+                    app:lineWidth="2dp"
+                    app:viewType="rectangle" />
+
+                <Button
+                    android:id="@+id/submit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/button_main_background"
+                    android:text="continue"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/resentCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="I didn't get a code"
+                    android:textAlignment="center"
+                    android:textColor="#019b77"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Tap Continue to accept our Terms,Data Policy, cookie use and the Privacy Policy and Terms of Service..."
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/loginProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent"></ProgressBar>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

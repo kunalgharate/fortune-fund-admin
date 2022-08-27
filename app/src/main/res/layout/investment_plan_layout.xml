@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/investment_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="@dimen/dp10"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="15dp"
+            android:text="Neuro Ultimated Premium"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:id="@+id/plan_validity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Cover amount"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/titl0e1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="$200"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:id="@+id/premium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Neuro Ultimated Premium"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="$2.08K/Month"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="7 Days waiting"
+                    android:textSize="15sp"
+                    android:gravity="center_horizontal"
+                    app:layout_flexBasisPercent="50%"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:textColor="@color/black"
+                    android:background="@drawable/rounded_corner_background" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Hospital cash "
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_flexBasisPercent="50%"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/rounded_corner_background"
+                    android:textStyle="bold" />
+
+
+            </com.google.android.flexbox.FlexboxLayout>
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>

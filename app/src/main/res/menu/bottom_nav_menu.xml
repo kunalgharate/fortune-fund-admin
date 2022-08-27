@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_recent_transactions"
+        android:icon="@drawable/transaction_icon"
+        android:title="Users" />
+
+
+    <item
+        android:id="@+id/navigation_wallet"
+        android:icon="@drawable/wallet_icon"
+        android:title="Request" />
+
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_contact_us"-->
+<!--        android:icon="@drawable/contactus_icon"-->
+<!--        android:title="Contact us" />-->
+
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_person"
+        android:title="Profile" />
+
+
+</menu>

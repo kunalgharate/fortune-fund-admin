@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:padding="@dimen/dp10"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_person" />
+
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toTopOf="@+id/editEmail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.13" />
+
+                <EditText
+                    android:id="@+id/editEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintBottom_toTopOf="@+id/editPass"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+                <EditText
+                    android:id="@+id/edit_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="Mobile No"
+                    android:inputType="phone"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonAcount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+
+                <EditText
+                    android:id="@+id/editBirthOfDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_person"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="DD/MM/YYYY (BirthDate)"
+                    android:inputType="date"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonAcount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+                <EditText
+                    android:id="@+id/editCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="City"
+                    android:inputType="text"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonAcount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+                <EditText
+                    android:id="@+id/editPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pin Code"
+                    android:inputType="number"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonAcount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+                <Button
+                    android:id="@+id/createAccountBtn"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:clickable="true"
+                    android:text="Sign Up"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/loginProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ProgressBar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

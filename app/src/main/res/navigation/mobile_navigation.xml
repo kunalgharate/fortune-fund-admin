@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.ffs.fortunefundadmin.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_recent_transactions"
+        android:name="com.ffs.fortunefundadmin.ui.recent_transaction.RecentTransactionFragment"
+        android:label="Users"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_wallet"
+        android:name="com.ffs.fortunefundadmin.ui.wallet.WalletFragment"
+        android:label="Payment requests"
+        tools:layout="@layout/fragment_wallet" />
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_contact_us"-->
+<!--        android:name="com.ffs.fortunefundadmin.ui.contact.ContactUsFragment"-->
+<!--        android:label="Contact us"-->
+<!--        tools:layout="@layout/fragment_contact" />-->
+
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.ffs.fortunefundadmin.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
