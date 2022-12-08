@@ -43,6 +43,7 @@ class ProfileFragment : Fragment() {
                 is Response.Loading ->     Log.d("Dataaa", "loading: ")
                 is Response.Success -> {
                     binding.user= booksResponse.data
+                    Log.d("Dataaa", "${booksResponse.data}")
                 }
                 is Error -> booksResponse.message?.let { Utils.printMessage(it) }
                 else -> {}

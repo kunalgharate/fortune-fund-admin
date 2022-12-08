@@ -61,8 +61,8 @@ class UserRepositoryImpl @Inject constructor(
 
         try {
             emit(Loading)
-            val id = userRef.collection(Constants.USER).document().id
-            val addition = appUser.id?.let { userRef.collection(Constants.USER).document(it).set(appUser).await()
+            val id = userRef.collection(Constants.USERS).document().id
+            val addition = appUser.id?.let { userRef.collection(Constants.USERS).document(it).set(appUser).await()
             }
             emit(Success(addition))
         } catch (e: Exception) {

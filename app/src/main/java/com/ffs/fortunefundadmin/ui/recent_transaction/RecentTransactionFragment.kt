@@ -36,12 +36,12 @@ class RecentTransactionFragment : Fragment() {
 
         var activity = activity as MainActivity
 
-        activity.viewModel.respons.observe(activity)
+        activity.viewModel.appUsersList.observe(activity)
         {
             when(val booksResponse = it) {
                 is Response.Loading ->     Log.d("Dataaa", "loading: ")
                 is Response.Success -> {
-                    binding.invtPlanRv.adapter = InvestmentPlanAdapter(booksResponse.data)
+                    binding.appUsersRv.adapter = AppUsersAdapter(booksResponse.data)
                 }
                 is Error -> booksResponse.message?.let { Utils.printMessage(it) }
                 else -> {}

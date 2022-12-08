@@ -32,7 +32,8 @@ object AppModule {
     fun provideUseCases(repo: InsurancePlanRepository) = UseCases(
         getBooks = GetBooks(repo),
         getProfile = GetProfile(repo),
-      //  addBook = AddBook(repo),
+        addInvestmentPlan = AddInvestmentPlan(repo),
+        getAllUsers = GetAllProfile(repo),
         deleteBook = DeleteBook(repo)
     )
 

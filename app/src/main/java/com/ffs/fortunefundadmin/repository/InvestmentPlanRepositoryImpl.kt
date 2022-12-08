@@ -1,5 +1,6 @@
 package com.ffs.fortunefundadmin.repository
 
+import com.ffs.fortunefundadmin.core.Constants
 import com.ffs.fortunefundadmin.core.Constants.INVESTMENT_PLAN
 import com.ffs.fortunefundadmin.core.Constants.NAME
 import com.ffs.fortunefundadmin.core.Constants.USERS
@@ -40,10 +41,30 @@ class InvestmentPlanRepositoryImpl @Inject constructor(
         }
     }
 
+    override fun getAllUsers() = callbackFlow {
+        val snapshotListener = investmentPlanRef.collection(USERS).orderBy(NAME)
+
+            .addSnapshotListener { snapshot, e ->
+                val response = if (snapshot != null) {
+                    val books = snapshot.toObjects(AppUser::class.java)
+                    Success(books)
+                } else {
+                    Error(e?.message ?: e.toString())
+                }
+                trySend(response).isSuccess
+            }
+        awaitClose {
+            snapshotListener.remove()
+        }
+    }
+
+
+
+
     override fun getProfileFromFirestore(userid: String): Flow<Response<AppUser>> = callbackFlow {
 
         val snapshotListener =
-            investmentPlanRef.collection(USERS).whereEqualTo("id", userid).orderBy(NAME)
+            investmentPlanRef.collection(Constants.USERS).whereEqualTo("id", userid).orderBy(NAME)
                 .addSnapshotListener { snapshot, e ->
 
                     val response = if (snapshot != null) {
@@ -59,6 +80,18 @@ class InvestmentPlanRepositoryImpl @Inject constructor(
                 }
         awaitClose {
             snapshotListener.remove()
+        }
+    }
+
+    override suspend fun addInvestmentPlan(investmentPlan: InvestmentPlan)=  flow {
+
+        try {
+            emit(Loading)
+            val id = investmentPlanRef.collection(INVESTMENT_PLAN).document().id
+            val addition = investmentPlanRef.collection(INVESTMENT_PLAN).document(id).set(investmentPlan).await()
+            emit(Success(addition))
+        } catch (e: Exception) {
+            emit(Error(e.message ?: e.toString()))
         }
     }
 

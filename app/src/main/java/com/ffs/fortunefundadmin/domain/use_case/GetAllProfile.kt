@@ -1,13 +1,11 @@
 package com.ffs.fortunefundadmin.domain.use_case
 
 import com.ffs.fortunefundadmin.domain.repository.InsurancePlanRepository
+import com.google.firebase.auth.FirebaseAuth
 
-class AddBook(
+class GetAllProfile (
     private val repo: InsurancePlanRepository
-)
-//{
-//    suspend operator fun invoke(
-//        title: String,
-//        author: String
-//    )// = //repo.addBookToFirestore(title, author)
-//}
+) {
+    operator fun invoke() = repo.getAllUsers();
+
+}

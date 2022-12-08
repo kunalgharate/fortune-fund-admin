@@ -8,9 +8,8 @@ object Constants {
 
     //Firestore
  //   const val BOOKS = "books"
-    const val USER = "users"
-    const val INVESTMENT_PLAN = "investment_plan"
     const val USERS = "users"
+    const val INVESTMENT_PLAN = "investment_plan"
     const val NAME = "name"
     const val  WALLET  = "wallet"
 

@@ -9,11 +9,13 @@ interface InsurancePlanRepository {
 
     fun getInvestmentPlanFromFirestore(): Flow<Response<List<InvestmentPlan>>>
 
+    fun getAllUsers(): Flow<Response<List<AppUser>>>
+
 
     fun getProfileFromFirestore(userId:String): Flow<Response<AppUser>>
 
 
-   // suspend fun addBookToFirestore(title: String, author: String): Flow<Response<Void?>>
+    suspend fun addInvestmentPlan(investmentPlan: InvestmentPlan): Flow<Response<Void?>>
 
     suspend fun deleteBookFromFirestore(bookId: String): Flow<Response<Void?>>
 }

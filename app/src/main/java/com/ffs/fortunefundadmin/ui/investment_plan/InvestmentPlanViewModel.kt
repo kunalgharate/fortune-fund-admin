@@ -19,10 +19,12 @@ class InvestmentPlanViewModel @Inject constructor(private val useCases: UseCases
     private lateinit var deleteBookResponse: Response<Void?>
     private lateinit var addBookResponse: Response<Void?>
     var respons: MutableLiveData<Response<List<InvestmentPlan>>> = MutableLiveData(Response.Loading)
+    var appUsersList: MutableLiveData<Response<List<AppUser>>> = MutableLiveData(Response.Loading)
     var appUser: MutableLiveData<Response<AppUser>> = MutableLiveData(Response.Loading)
     init {
         getBooks()
         getProfile()
+        getAllUsers()
     }
 
     private fun getBooks() = viewModelScope.launch {
@@ -34,6 +36,14 @@ class InvestmentPlanViewModel @Inject constructor(private val useCases: UseCases
 
     }
 
+    private fun getAllUsers() = viewModelScope.launch {
+        useCases.getAllUsers().collect { response ->
+            appUsersList.value= response;
+            ;
+            Log.d("MTTTTT", "getBooks: $response")
+        }
+    }
+
 
 
     private fun getProfile() = viewModelScope.launch {
@@ -42,14 +52,13 @@ class InvestmentPlanViewModel @Inject constructor(private val useCases: UseCases
             ;
             Log.d("MTTTTT", "appUser: $response")
         }
-
     }
 
-//    fun addBook(title: String, author: String) = viewModelScope.launch {
-//        useCases.addBook(title, author).collect { response ->
-//            addBookResponse = response
-//        }
-//    }
+    fun addInvestmentPlan(investmentPlan: InvestmentPlan) = viewModelScope.launch {
+        useCases.addInvestmentPlan(investmentPlan).collect { response ->
+            addBookResponse = response
+        }
+    }
 
     fun deleteBook(bookId: String) = viewModelScope.launch {
         useCases.deleteBook(bookId).collect { response ->

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
   <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -28,6 +29,7 @@
       android:hint="Plan Name">
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/planNameEd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -101,4 +103,12 @@
       android:text="Update"
       android:visibility="gone"
       android:textColor="@color/white" />
+
+  <Button
+      android:layout_margin="@dimen/dp20"
+      android:id="@+id/button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Button" />
 </LinearLayout>
+</layout>
