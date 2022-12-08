@@ -28,7 +28,6 @@ class SplashActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
         activityScope.launch {
             delay(3000)
 
